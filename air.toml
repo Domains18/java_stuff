@@ -1,0 +1,14 @@
+# air.toml
+color = "green"
+
+exclude_list = [
+    "tmp",
+    "logs",
+    ".git",
+]
+
+watch_list =[
+    "./.go",
+    "./templates/**/.html",
+    "./static"
+]
