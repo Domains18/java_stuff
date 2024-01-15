@@ -10,7 +10,7 @@ import (
 
 var DB *gorm.DB
 
-func PingDatabase(){
+func PingDatabase() {
 	var isError error
 	dsn := os.Getenv("DATABASE_STRING")
 	DB, isError = gorm.Open(postgres.Open(dsn), &gorm.Config{})
