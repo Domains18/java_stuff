@@ -5,10 +5,26 @@ exclude_list = [
     "tmp",
     "logs",
     ".git",
+    ".idea",
+    ".vscode",
+    "build",
+    "vendor",
+    "node_modules",
+    "public",
 ]
-
-watch_list =[
+watch_list = [
     "./.go",
     "./templates/**/.html",
     "./static"
+]
+
+command = "go run main.go"
+
+[build]
+bin_name = "main"
+output_path = "build"
+exclude_dir = [
+    "tmp",
+    "logs",
+    ".git",
 ]
