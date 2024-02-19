@@ -1,5 +1,0 @@
-package configurations
-
-func SyncDatabase() {
-
-}
