@@ -9,6 +9,19 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./transactions.db"
+}
+
+
+model Transactions {
+  ID  BigInt @id @default(autoincrement())
+  MerchantRequestID String @unique
+  CheckoutRequestID String @unique
+  ResultCode String
+  ResultDesc String
+  Amount String
+  MpesaReceiptNumber String
+  TransactionDate String
+  PhoneNumber String
 }
