@@ -12,5 +12,6 @@ export async function validateTransactions(req: Request, res: Response,) {
     if (transaction == null) {
         return res.status(404).json({ message: "Transaction not found" });
     }
-    console.log({transaction: transaction})
+    console.log({ transaction: transaction })
+    return res.status(200).json({ message: transaction });
 }
