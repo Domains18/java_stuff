@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
         res.sendFile('index.html', { root: __dirname });
     } else {
         if (req.accepts('json')) {
-            res.status
+            res.status(200).json("api is working")
         }
     }
 })
