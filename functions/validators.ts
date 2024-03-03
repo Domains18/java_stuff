@@ -8,4 +8,5 @@ export async function validateTransactions(req: Request, res: Response,) {
         return res.sendStatus(400);
     }
     const MerchantRequestID = payload.MerchantRequestID;
+    const transaction = await prismaConstants.transaction.findFirst({})
 }
