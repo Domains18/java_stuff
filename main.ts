@@ -5,6 +5,7 @@ import cors from 'cors'
 const app = express();
 dotenv.config()
 
+const PORT = process.env.PORT || 5000;
 
 app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
@@ -20,4 +21,9 @@ app.get('/', (req, res) => {
             res.status(200).json("api is working")
         }
     }
+})
+
+
+app.listen(PORT, () => {
+    console.log(`server running on port ${PORT}`)
 })
