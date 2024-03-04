@@ -23,7 +23,7 @@ async function token_controller(req:CustomRequest, res:Response, next:NextFuncti
     const auth = Buffer.from(`${consumer}:${secret}`).toString("base64");
 
     try {
-        const response = await await axios.get("https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials", {
+        const response =  await axios.get("https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials", {
             headers: { Authorization: `Basic ${auth}` }
         });
         req.token = response.data.access_token;
@@ -43,5 +43,6 @@ export async function express_stk(req: CustomRequest, res: Response) {
     }
     const shortCode = process.env.SHORTCODE;
     const passkey = process.env.PASSKEY;
-    
+    const timestamp = generateTimestamp();
+    const password = Buffer.from(`${shortCode}${passkey}${timestamp}`).toString("base64");
 }
