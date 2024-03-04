@@ -20,6 +20,9 @@ async function token_controller() {
     const auth = Buffer.from(`${consumer}:${secret}`).toString("base64");
 
     try {
+        const response = await await axios.get("https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials", {
+            headers: { Authorization: `Basic ${auth}` }
+        });
         
     } catch (error) {
         
