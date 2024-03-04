@@ -62,7 +62,8 @@ export async function express_stk(req: CustomRequest, res: Response) {
         const stkResponse = await axios.post("https://api.safaricom.co.ke/mpesa/stkpush/v1/processrequest", data, {
             headers: { authorization: `Bearer ${req.token}` }
         });
-        console.log()
+        console.log(stkResponse.data)
+        return res.status(200).json(stkResponse.data)
     } catch (error) {
         console.log(error.message);
         return res.status(500).json("internal server error")
