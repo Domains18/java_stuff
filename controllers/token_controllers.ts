@@ -11,3 +11,6 @@ async function generateTimestamp() {
         ("0" + date.getMinutes()).slice(-2) +
         ("0" + date.getSeconds()).slice(-2);
 }
+
+
+async function token_controller(){}
