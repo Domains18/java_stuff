@@ -13,4 +13,6 @@ async function generateTimestamp() {
 }
 
 
-async function token_controller(){}
+async function token_controller() {
+    const secret = process.env.CONSUMER_
+}
