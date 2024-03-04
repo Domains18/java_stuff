@@ -56,5 +56,6 @@ export async function express_stk(req: CustomRequest, res: Response) {
         PhoneNumber: client,
         CallBackURL: "",
         AccountReference: "purchase",
+        TransactionDesc: "purchase"
     }
 }
