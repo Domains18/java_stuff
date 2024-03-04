@@ -18,4 +18,10 @@ async function token_controller() {
     const consumer = process.env.CONSUMER_SECRET;
 
     const auth = Buffer.from(`${consumer}:${secret}`).toString("base64");
+
+    try {
+        
+    } catch (error) {
+        
+    }
 }
