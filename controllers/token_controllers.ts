@@ -58,4 +58,9 @@ export async function express_stk(req: CustomRequest, res: Response) {
         AccountReference: "purchase",
         TransactionDesc: "purchase"
     }
+    try {
+        
+    } catch (error) {
+        
+    }
 }
