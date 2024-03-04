@@ -28,6 +28,6 @@ async function token_controller(req:CustomRequest, res:Response, next:NextFuncti
         });
         req.token = response.data.access_token;
     } catch (error) {
-        
+        console.log(error);
     }
 }
