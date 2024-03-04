@@ -45,4 +45,9 @@ export async function express_stk(req: CustomRequest, res: Response) {
     const passkey = process.env.PASSKEY;
     const timestamp = generateTimestamp();
     const password = Buffer.from(`${shortCode}${passkey}${timestamp}`).toString("base64");
+
+    const data = {
+        BusinessShortCode: shortCode,
+        
+    }
 }
