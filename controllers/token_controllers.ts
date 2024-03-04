@@ -36,4 +36,6 @@ async function token_controller(req:CustomRequest, res:Response, next:NextFuncti
 
 
 
-export async function express_stk(req: CustomRequest, res:Response){}
+export async function express_stk(req: CustomRequest, res: Response) {
+    const { client, amount } = req.body;
+}
