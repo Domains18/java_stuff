@@ -29,6 +29,6 @@ async function token_controller(req:CustomRequest, res:Response, next:NextFuncti
         req.token = response.data.access_token;
     } catch (error) {
         console.log(error);
-        return res.status
+        return res.status(500).json("internal server error at catch")
     }
 }
