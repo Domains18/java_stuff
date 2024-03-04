@@ -12,8 +12,11 @@ async function generateTimestamp() {
         ("0" + date.getSeconds()).slice(-2);
 }
 
+interface CustomRequest extends Request {
+    token?: string;
+}
 
-async function token_controller(req:Request, res:Response, next:NextFunction) {
+async function token_controller(req:CustomRequest, res:Response, next:NextFunction) {
     const secret = process.env.CONSUMER_KEY;
     const consumer = process.env.CONSUMER_SECRET;
 
@@ -23,7 +26,7 @@ async function token_controller(req:Request, res:Response, next:NextFunction) {
         const response = await await axios.get("https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials", {
             headers: { Authorization: `Basic ${auth}` }
         });
-        
+        req.token = response.data.access_token;
     } catch (error) {
         
     }
