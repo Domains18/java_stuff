@@ -27,8 +27,13 @@ async function token_controller(req:CustomRequest, res:Response, next:NextFuncti
             headers: { Authorization: `Basic ${auth}` }
         });
         req.token = response.data.access_token;
+        next();
     } catch (error) {
         console.log(error);
         return res.status(500).json("internal server error at catch")
     }
 }
+
+
+
+export async function express_stk(req: CustomRequest, res:Response){}
