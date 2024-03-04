@@ -40,5 +40,6 @@ export async function express_stk(req: CustomRequest, res: Response) {
     const { client, amount } = req.body;
     if (!client || !amount) {
         return res.sendStatus(401)
-    } 
+    }
+    const shortCode = process.env.SHORTCODE;
 }
