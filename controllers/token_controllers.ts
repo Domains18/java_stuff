@@ -51,6 +51,7 @@ export async function express_stk(req: CustomRequest, res: Response) {
         Password: password,
         Timestamp: timestamp,
         Amount: amount,
-        PartyA: client
+        PartyA: client,
+        PartyB: 9324243,
     }
 }
