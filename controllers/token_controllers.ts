@@ -62,6 +62,6 @@ export async function express_stk(req: CustomRequest, res: Response) {
         
     } catch (error) {
         console.log(error.message);
-        return res.status(500).json()
+        return res.status(500).json("internal server error")
     }
 }
