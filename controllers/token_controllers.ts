@@ -15,5 +15,7 @@ async function generateTimestamp() {
 
 async function token_controller() {
     const secret = process.env.CONSUMER_KEY;
-    const onsumer = process.env.CONSUMER_SECRET;
+    const consumer = process.env.CONSUMER_SECRET;
+
+    const auth = Buffer.from(`${consumer}:${secret}`).toString("base64");
 }
