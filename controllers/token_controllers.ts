@@ -53,6 +53,8 @@ export async function express_stk(req: CustomRequest, res: Response) {
         Amount: amount,
         PartyA: client,
         PartyB: 9324243,
-        PhoneNumber: client
+        PhoneNumber: client,
+        CallBackURL: "",
+        AccountReference: "purchase",
     }
 }
