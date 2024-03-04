@@ -48,6 +48,9 @@ export async function express_stk(req: CustomRequest, res: Response) {
 
     const data = {
         BusinessShortCode: shortCode,
-        
+        Password: password,
+        Timestamp: timestamp,
+        Amount: amount,
+        PartyA: client
     }
 }
