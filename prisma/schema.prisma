@@ -41,17 +41,21 @@ model User {
   Email String @unique
   PhoneNumber String @unique
   Password String
-  Orders String
-  // Transactions Transactions[]
+  Orders Order[]
 }
 
-model Orders {
+model Order {
   ID BigInt @id @default(autoincrement())
   UserEmail String
   UserPhone String 
   Date DateTime @default(now())
   Time DateTime @default(now())
+  UserID BigInt
+  User User @relation(fields: [UserID], references: [ID])
+}
 
+model Admin {
+  ID BigInt @id @default(autoincrement())
+  Role String
 
-  
 }
