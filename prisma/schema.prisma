@@ -48,6 +48,6 @@ model Orders {
   ID BigInt @id @default(autoincrement())
   UserEmail String
   UserPhone String 
-  Date String
-  Time String 
+  Date DateTime @default(now())
+  Time DateTime @default(now())
 }
