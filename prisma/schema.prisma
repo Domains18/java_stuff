@@ -56,6 +56,6 @@ model Order {
 
 model Admin {
   ID BigInt @id @default(autoincrement())
-  Role String
-
+  Role String @unique
+  
 }
