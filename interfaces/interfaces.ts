@@ -19,6 +19,8 @@ export interface User {
 
 
 export interface Books{
+    Title: string;
+    Description: string;
     
 }
 
