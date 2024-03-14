@@ -1,5 +1,3 @@
-
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -9,51 +7,61 @@ datasource db {
   url      = "file:./application.db"
 }
 
-
 model Transactions {
-  ID  BigInt @id @default(autoincrement())
-  MerchantRequestID String @unique
-  CheckoutRequestID String @unique
-  ResultCode String
-  ResultDesc String
-  Amount String
+  ID                 BigInt @id @default(autoincrement())
+  MerchantRequestID  String @unique
+  CheckoutRequestID  String @unique
+  ResultCode         String
+  ResultDesc         String
+  Amount             String
   MpesaReceiptNumber String
-  TransactionDate String
-  PhoneNumber String
+  TransactionDate    String
+  PhoneNumber        String
 }
-
 
 model Books {
-  ID BigInt  @id @default(autoincrement())
-  Title String 
-  Description String 
-  Author String
-  Price String
-}
+  ID          BigInt @id @default(autoincrement())
+  Title       String
+  Description String
+  Author      String
+  Price       String
+  CreatedAt DateTime @default(now())
+  UpdatedAt DateTime @default(now())
 
-model User {
-  ID BigInt @id @default(autoincrement())
-  Name String
-  Email String @unique
-  PhoneNumber String @unique
-  Password String
   Orders Order[]
 }
 
+model User {
+  ID          BigInt  @id @default(autoincrement())
+  FirstName   String
+  LastName    String
+  Email       String  @unique
+  PhoneNumber String  @unique
+  Password    String
+
+
+  Orders      Order[]
+}
+
 model Order {
-  ID BigInt @id @default(autoincrement())
-  UserEmail String
-  UserPhone String 
-  Date DateTime @default(now())
-  Time DateTime @default(now())
+  ID     BigInt   @id @default(autoincrement())
+  Email  String
+  Phone  String
+  Date   DateTime @default(now())
+  Time   DateTime @default(now())
   UserID BigInt
-  User User @relation(fields: [UserID], references: [ID])
+  BookId BigInt
+
+  User User  @relation(fields: [UserID], references: [ID])
+  Book Books @relation(fields: [BookId], references: [ID])
 }
 
 model Admin {
-  ID BigInt @id @default(autoincrement())
-  Role String @unique
-  Email String @unique
+  ID          BigInt @id @default(autoincrement())
+  FirstName   String
+  LastName    String
+  Role        String @unique
+  Email       String @unique
   PhoneNumber String @unique
-  Password String 
+  Password    String
 }
