@@ -21,7 +21,8 @@ export interface User {
 export interface Books{
     Title: string;
     Description: string;
-    
+    Author: string;
+    Price: string;
 }
 
 export interface Order {
