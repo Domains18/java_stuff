@@ -46,5 +46,8 @@ model User {
 
 model Orders {
   ID BigInt @id @default(autoincrement())
-  
+  UserEmail String
+  UserPhone String 
+  Date String
+  Time String 
 }
