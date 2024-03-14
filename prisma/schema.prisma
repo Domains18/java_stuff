@@ -41,6 +41,7 @@ model User {
   Email String @unique
   PhoneNumber String @unique
   Password String
+  Orders String
   // Transactions Transactions[]
 }
 
@@ -50,4 +51,7 @@ model Orders {
   UserPhone String 
   Date DateTime @default(now())
   Time DateTime @default(now())
+
+
+  
 }
