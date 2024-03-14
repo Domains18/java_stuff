@@ -18,7 +18,9 @@ export interface User {
 
 
 
-export interface Books{}
+export interface Books{
+    
+}
 
 export interface Order {
     Email: string;
