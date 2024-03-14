@@ -25,3 +25,9 @@ model Transactions {
   TransactionDate String
   PhoneNumber String
 }
+
+
+model Books {
+  ID BigInt  @id @default(autoincrement())
+  Title String 
+}
