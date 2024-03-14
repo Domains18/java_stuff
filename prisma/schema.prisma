@@ -30,4 +30,21 @@ model Transactions {
 model Books {
   ID BigInt  @id @default(autoincrement())
   Title String 
+  Description String 
+  Author String
+  Price String
+}
+
+model User {
+  ID BigInt @id @default(autoincrement())
+  Name String
+  Email String @unique
+  PhoneNumber String @unique
+  Password String
+  // Transactions Transactions[]
+}
+
+model Orders {
+  ID BigInt @id @default(autoincrement())
+  
 }
