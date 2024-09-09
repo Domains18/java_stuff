@@ -12,9 +12,55 @@ public class AddressBook {
     public static void main(String[] args) {
         int choice;
 
-        do{
+        do {
             System.out.println("Address Book application");
+            System.out.println("1. Add Contact");
+            System.out.println("2. View Contacts");
+            System.out.println("3. Search Contact");
+            System.out.println("4. Delete Contact");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            choice = input.nextInt();
+
+            switch (choice) {
+                case 1:
+                    addContact();
+                    break;
+                
+                case 2:
+                    viewContacts();
+                    break;
+
+                case 3:
+                    searchContact();
+                    break;
+
+                case 4:
+                    deleteContact();
+                    break;
+                case 5:
+                    System.out.println("exiting gracefully...........");
+                    break;
+
+                default:
+                    System.out.println("invalid choice");
+            }
         } while (choice != 5);
+    }
+    
+    public static void addContact() {
+    }
+    
+    public static void viewContacts() {
+    }
+    
+    
+    public static void deleteContact() {
+
+    }
+    
+    public static void searchContact() {
+        
     }
 }
 
